@@ -24,10 +24,34 @@
 "root": {
 
 "project-configurations": [
-    "cl-debug": {},
-    "cl-release": {},
-   "cl-debug": {},
-    "cl-release": {}
+    "x64": {
+        "cl-debug": {
+
+        },
+        "cl-release": {
+
+        },
+        "clang-cl-debug": {
+
+        },
+        "clang-cl-release": {
+
+        }
+    },
+    "x86": {
+        "cl-debug": {
+
+        },
+        "cl-release": {
+
+        },
+        "clang-cl-debug": {
+
+        },
+        "clang-cl-release": {
+
+        }
+    }
 ]
 
 }
