@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "vc",
+            "cStandard": "c89",
+            "cppStandard": "c++20",
+            "includePath": [ "$(default)" ],
+            "intelliSenseMode": "msvc-x64"
+        },
+        {
+            "name": "clang",
+            "includePath": [ "$(default)" ],
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

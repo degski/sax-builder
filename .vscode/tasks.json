@@ -1,0 +1,136 @@
+{
+   "version": "2.0.0",
+   "includePath": ["$(default)" ],
+   "tasks": [
+    {
+      "label": "build-cl-debug",
+      "type": "shell",
+      "command": ".\\.vscode/build.cmd", 
+      "args": [
+        "c:\\usr\\vc\\bin\\hostx64\\x64\\cl.exe",
+        "/EHsc",
+        "/W3",
+        "/MT",
+        "/Od",
+        "/Z7",
+        "/arch:AVX2",
+        "-std:c++latest",   
+        "-D _DEBUG", "-D UNICODE", "-D _UNICODE", "-D NOMINMAX",
+        "main.cpp",
+        "/link",
+        "/OUT:sax-builder-cl.exe",
+        "/LTCG",
+        "/DEBUG:FULL",
+        "/MACHINE:X64",
+        "main.obj"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "build-clang-debug",
+      "type": "shell",
+      "command": ".\\.vscode/build.cmd",
+      "args": [
+        "c:\\usr\\clang\\bin\\clang-cl.exe",
+        "-fuse-lld",
+        "-flto-thin",
+        "/EHsc",
+        "/w",
+        "-m64",
+        "/MT",
+        "/Od",
+        "/Z7",
+        "-fmsc-version-1924",
+        "-fno-delayed-template-parsing",
+        "-march-native",
+        "-mavx2",
+        "-std:c++17",
+        "-Xclang",
+        "-fforce-enable-int128",
+        "-Xclang",
+        "-faligned-allocation",
+        "-Xclang",
+        "-fcolor-diagnostics",
+        "-D _DEBUG", "-D UNICODE", "-D _UNICODE", "-D NOMINMAX",
+        "main.cpp"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "build-cl-release",
+      "type": "shell",
+      "command": ".\\.vscode/build.cmd", 
+      "args": [
+        "c:\\usr\\vc\\bin\\hostx64\\x64\\cl.exe",
+        "/EHsc",
+        "/W3",
+        "/MT",
+        "/O2",
+        "/arch:AVX2",
+        "-std:c++latest",   
+        "-D NODEBUG", "-D UNICODE", "-D _UNICODE", "-D NOMINMAX",
+        "main.cpp",
+        "/link",
+        "/OUT:sax-builder-cl.exe",
+        "/LTCG",
+        "/DEBUG:FULL",
+        "/MACHINE:X64",
+        "main.obj"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "build-clang-release",
+      "type": "shell",
+      "command": ".\\.vscode/build.cmd",
+      "args": [
+        "c:\\usr\\clang\\bin\\clang-cl.exe",
+        "-fuse-lld",
+        "-flto-thin",
+        "/EHsc",
+        "/w",
+        "-m64",
+        "/MT",
+        "/O2",
+        "-fmsc-version-1924",
+        "-fno-delayed-template-parsing",
+        "-march-native",
+        "-mavx2",
+        "-std:c++17",
+        "-Xclang",
+        "-fforce-enable-int128",
+        "-Xclang",
+        "-faligned-allocation",
+        "-Xclang",
+        "-fcolor-diagnostics",
+        "-D NODEBUG", "-D UNICODE", "-D _UNICODE", "-D NOMINMAX",
+        "main.cpp"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    }
+  ]
+ }
